@@ -1,20 +1,84 @@
-<html>
+<!DOCTYPE html>
+<html lang="pl">
 <head>
-<META HTTP-EQUIV="content-type" CONTENT="text/html; CHARSET=iso-8859-2">
+  <meta charset="UTF-8">
+  <title>Ankieta: Czy jesteś prosem?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    button {
+      font-size: 1.5em;
+      padding: 10px 20px;
+      margin: 20px;
+      cursor: pointer;
+    }
+
+    #jupiii {
+      display: none;
+      font-size: 4em;
+      color: green;
+      margin-top: 50px;
+      animation: bounceIn 1s ease-out forwards;
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: translateY(100px) scale(0.5);
+        opacity: 0;
+      }
+      60% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 1;
+      }
+      80% {
+        transform: translateY(10px) scale(0.95);
+      }
+      100% {
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animacja {
+      display: block !important;
+      animation: bounceIn 1s ease-out forwards;
+    }
+  </style>
 </head>
 <body>
-<table width=95% border="1" align="center">
-<tr>
-<td width=18% align=center>
-<a href="http://www.kuratorium.gda.pl" target="strony">Kuratorium</a>
-<br>
-<a href="http://www.wp.pl" target="strony">Portal WP</a>
-</td>
-<td align=center><iframe width=650 height=650 name="strony" src="start.html" border="0"></iframe>
-</td>
-<td width=18% align=center><a href="start.html" target="strony">Start</a>
-</td>
-</tr>
-</table>
+
+  <h1>Czy jesteś prosem?</h1>
+  <button onclick="pokazJupiii()">Tak</button>
+  <button onclick="pokazJupiii()">Tak</button>
+
+  <div id="jupiii">JUPIII!</div>
+
+  <!-- Dodanie biblioteki do konfetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    function pokazJupiii() {
+      const jupiii = document.getElementById("jupiii");
+      jupiii.classList.remove("animacja");
+      void jupiii.offsetWidth;
+      jupiii.classList.add("animacja");
+
+      // Odpal konfetti 🎉
+      confetti({
+        particleCount: 150,
+        spread: 90,
+        origin: { y: 0.6 }
+      });
+    }
+  </script>
+
 </body>
 </html>
