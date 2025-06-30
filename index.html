@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>nigga whaaa</title>
+  <title>Ankieta: Czy jesteś prosem?</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -30,6 +30,11 @@
       animation: bounceIn 1s ease-out forwards;
     }
 
+    #gif {
+      display: none;
+      margin-top: 30px;
+    }
+
     @keyframes bounceIn {
       0% {
         transform: translateY(100px) scale(0.5);
@@ -55,22 +60,31 @@
 </head>
 <body>
 
-  <h1>Can I be ur bf pretty plss🙏🙏</h1>
+  <h1>Can I be ur bf pretty plsss🙏🙏😜</h1>
   <button onclick="pokazJupiii()">Tak</button>
   <button onclick="pokazJupiii()">Tak</button>
 
   <div id="jupiii">JUPIII!</div>
 
+  <div id="gif" class="tenor-gif-embed" data-postid="15838515" data-share-method="host" data-aspect-ratio="0.5625" data-width="100%">
+    <a href="https://tenor.com/view/futsal-shuffle-lil-uzi-vert-lil-uzi-dance-gif-15838515">Futsal Shuffle GIF</a> from 
+    <a href="https://tenor.com/search/futsal-gifs">Futsal GIFs</a>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
   <script>
     function pokazJupiii() {
       const jupiii = document.getElementById("jupiii");
+      const gif = document.getElementById("gif");
+
       jupiii.classList.remove("animacja");
       void jupiii.offsetWidth;
       jupiii.classList.add("animacja");
-      
+
+      gif.style.display = "block";
+
       confetti({
         particleCount: 150,
         spread: 90,
