@@ -30,7 +30,7 @@
       animation: bounceIn 1s ease-out forwards;
     }
 
-    #gif {
+    #gif-tak, #gif-nie {
       display: none;
       margin-top: 30px;
     }
@@ -60,15 +60,21 @@
 </head>
 <body>
 
-  <h1>Can I be ur bf pretty plsss🙏🙏😜</h1>
+  <h1>Can I be ur bf pretty plsss😜🙏🙏</h1>
   <button onclick="pokazJupiii()">Tak</button>
   <button onclick="pokazJupiii()">Tak</button>
+  <button onclick="pokazNie()">Nie (jak to wybierzesz to cię rozstrzelam)</button>
 
   <div id="jupiii">JUPIII!</div>
 
-  <div id="gif" class="tenor-gif-embed" data-postid="15838515" data-share-method="host" data-aspect-ratio="0.5625" data-width="100%">
+  <div id="gif-tak" class="tenor-gif-embed" data-postid="15838515" data-share-method="host" data-aspect-ratio="0.5625" data-width="100%">
     <a href="https://tenor.com/view/futsal-shuffle-lil-uzi-vert-lil-uzi-dance-gif-15838515">Futsal Shuffle GIF</a> from 
     <a href="https://tenor.com/search/futsal-gifs">Futsal GIFs</a>
+  </div>
+
+  <div id="gif-nie" class="tenor-gif-embed" data-postid="13483728185696032666" data-share-method="host" data-aspect-ratio="1.88976" data-width="100%">
+    <a href="https://tenor.com/view/uzi-lil-uzi-vert-crying-gif-13483728185696032666">Uzi Lil Uzi Vert GIF</a> from 
+    <a href="https://tenor.com/search/uzi-gifs">Uzi GIFs</a>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -77,19 +83,32 @@
   <script>
     function pokazJupiii() {
       const jupiii = document.getElementById("jupiii");
-      const gif = document.getElementById("gif");
+      const gifTak = document.getElementById("gif-tak");
+      const gifNie = document.getElementById("gif-nie");
 
       jupiii.classList.remove("animacja");
       void jupiii.offsetWidth;
       jupiii.classList.add("animacja");
 
-      gif.style.display = "block";
+      jupiii.style.display = "block";
+      gifTak.style.display = "block";
+      gifNie.style.display = "none";
 
       confetti({
         particleCount: 150,
         spread: 90,
         origin: { y: 0.6 }
       });
+    }
+
+    function pokazNie() {
+      const jupiii = document.getElementById("jupiii");
+      const gifTak = document.getElementById("gif-tak");
+      const gifNie = document.getElementById("gif-nie");
+
+      jupiii.style.display = "none";
+      gifTak.style.display = "none";
+      gifNie.style.display = "block";
     }
   </script>
 
